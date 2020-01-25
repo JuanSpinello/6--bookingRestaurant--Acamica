@@ -34,6 +34,6 @@ Restaurant.prototype.obtenerPuntuacion = function() {
         var promedio = sumatoria / this.calificaciones.length;
         return Math.round(promedio * 10) / 10;
     }
-
+    
 }
 
