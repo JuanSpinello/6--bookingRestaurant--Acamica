@@ -120,3 +120,15 @@ describe("Test sobre la obtención de un restaurante al filtrar entre diversos f
         expect(restauranteFiltrado[0].nombre).to.equal("Osteria Da Fortunata", "Pastasciutta", "La Trottinette", "Carmine's", "Vapiano");
     })
 })
+
+describe("Test sobre precios de reserva", function() {
+    it("Se valida el precio base de una reserva", function() {
+        let reserva1 = new Reserva (new Date(2018, 7, 24, 11, 00), 8, 350, "DES1"); //(horario, personas, precioPorPersona, codigoDescuento)
+        expect(reserva1.precioBase()).to.equal(2800);
+    })
+
+    it("Se valida el precio final de una reserva", function() {
+        let reserva2 = new Reserva (new Date(2018, 7, 27, 14, 100), 2, 150, "DES200")
+        expect(reserva2.precioTotal()).to.equal(100);
+    })
+})

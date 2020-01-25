@@ -28,7 +28,7 @@ Listado.prototype.calificarRestaurant = function(id, calificacion) {
 
 Listado.prototype.buscarRestaurante = function(id) {
     let restaurantHallado = this.restaurantes.find(function(res) {
-        return res.id ===id;
+        return res.id === id;
     });
     return "No se ha encontrado ningún restaurant";
 }

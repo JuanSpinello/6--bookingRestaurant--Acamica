@@ -21,7 +21,7 @@ var Restaurant = function(id, nombre, rubro, ubicacion, horarios, imagen, califi
 Restaurant.prototype.reservarHorario = function(horarioReservado) {
     let horarioElegido = this.horarios.filter(function(horario) {
         return horario !== horarioReservado;
-    })
+    });
     this.horarios = horarioElegido;
 }
 
