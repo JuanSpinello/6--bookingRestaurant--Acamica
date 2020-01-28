@@ -26,7 +26,7 @@ Restaurant.prototype.reservarHorario = function(horarioReservado) {
 }
 
 Restaurant.prototype.calificar = function(nuevaCalificacion) {
-    if (Number.isInteger(nuevaCalificacion) && nuevaCalificacion > 0 && nuevaCalificacion < 10) {
+    if (Number.isInteger(nuevaCalificacion) && nuevaCalificacion > 0 && nuevaCalificacion <= 10) {
         this.calificaciones.push(nuevaCalificacion);
     }
 }
@@ -49,7 +49,7 @@ Restaurant.prototype.obtenerPuntuacion = function() {
     if(this.calificaciones.length === 0) {
         return 0;
     } else {
-        return promedio(this.calificaciones);
+        return promedio(this.calificaciones).toFixed(1);
     }
 }
 //without modularization 

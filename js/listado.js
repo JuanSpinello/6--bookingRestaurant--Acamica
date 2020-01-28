@@ -27,10 +27,8 @@ Listado.prototype.calificarRestaurant = function(id, calificacion) {
 // }
 
 Listado.prototype.buscarRestaurante = function(id) {
-    let restaurantHallado = this.restaurantes.find(function(res) {
-        return res.id === id;
-    });
-    return "No se ha encontrado ningún restaurant";
+    let restaurantPorId = this.restaurantes.find((restaurant) => restaurant.id === id)
+            return restaurantPorId || "No se ha encontrado ningún restaurant";
 }
 
 //funcion reutilizable que elimina las terminos repetidos de un array
@@ -48,8 +46,8 @@ Listado.prototype.obtenerUbicaciones = function() {
     // for (var i = 0; i < this.restaurantes.length; i++) {
     //     ciudadesGeneral.push(this.restaurantes[i].ubicacion);
     // }
-    let ciudadesGeneral = this.restaurantes.map(function(res) {
-        return res.ubicacion;
+    let ciudadesGeneral = this.restaurantes.map(function(restaurant) {
+        return restaurant.ubicacion;
     });
     //Se crea un nuevo array donde se van a agregar las ciudades pero sin repetirse
     return eliminarRepetidos(ciudadesGeneral);
@@ -65,8 +63,8 @@ Listado.prototype.obtenerRubros = function() {
     // var restaurantesUnicos = restaurantesGeneral.filter(function(elem, index, self) {
     //     return index === self.indexOf(elem);
     // });
-    let rubrosGeneral = this.restaurantes.map(function(res) {
-        return res.rubro;
+    let rubrosGeneral = this.restaurantes.map(function(restaurant) {
+        return restaurant.rubro;
     });
 
     return eliminarRepetidos(rubrosGeneral);
@@ -82,8 +80,8 @@ Listado.prototype.obtenerHorarios = function() {
     // for (var i = 0; i < this.restaurantes.length; i++) {
     //     horariosCargados.push(this.restaurantes[i].horarios);
     // }
-    let horariosCargados = this.restaurantes.map(function(res) {
-        return res.horarios;
+    let horariosCargados = this.restaurantes.map(function(restaurant) {
+        return restaurant.horarios;
     });
     //En este arreglo vamos a poner todos los horarios, uno por uno
     var horariosGeneral = [];
